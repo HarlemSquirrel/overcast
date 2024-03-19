@@ -13,5 +13,8 @@ require:
   - rubocop-capybara
   - rubocop-rails
 
+AllCops:
+  NewCops: enable
+
 Metrics/BlockLength:
   Enabled: false
