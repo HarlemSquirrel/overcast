@@ -12,3 +12,6 @@
 require:
   - rubocop-capybara
   - rubocop-rails
+
+Metrics/BlockLength:
+  Enabled: false
