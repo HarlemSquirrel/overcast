@@ -10,7 +10,7 @@ class ForecastsController < ApplicationController
 
     @location = GeocodedLocation.new(params[:q])
 
-    if !@location.found?
+    unless @location.found?
       @errors = ["Could not find a location for #{query}"]
       return
     end
@@ -25,8 +25,8 @@ class ForecastsController < ApplicationController
 
     @forecast.data_str = OpenWeather.new(@location).weather_data_str if @forecast.stale?
 
-    unless @forecast.save
-      Rails.logger.warn("Failed to save forecast. #{@forecast.errors.full_messages.join('. ')}.")
-    end
+    return if @forecast.save
+
+    Rails.logger.warn("Failed to save forecast. #{@forecast.errors.full_messages.join('. ')}.")
   end
 end

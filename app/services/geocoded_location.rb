@@ -6,7 +6,8 @@
 class GeocodedLocation
   CACHE_DURATION = 1.hour
 
-  delegate :city, :country_code, :latitude, :longitude, :postal_code, :place_id, :state, to: :cached_location, allow_nil: true
+  delegate :city, :country_code, :latitude, :longitude, :postal_code, :place_id, :state, to: :cached_location,
+                                                                                         allow_nil: true
 
   def initialize(query)
     @query = query.strip.downcase
