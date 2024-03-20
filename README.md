@@ -2,6 +2,8 @@
 
 Get weather for an address.
 
+![screenshot](/screenshot.png)
+
 ## Development
 
 ### Dependecies
