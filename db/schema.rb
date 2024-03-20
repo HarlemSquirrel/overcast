@@ -12,8 +12,9 @@
 
 ActiveRecord::Schema[7.1].define(version: 2024_03_19_131549) do
   create_table "forecasts", force: :cascade do |t|
+    t.string "data_str", null: false
+    t.string "place_id", null: false
     t.string "postal_code"
-    t.string "data_str"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["postal_code"], name: "index_forecasts_on_postal_code"

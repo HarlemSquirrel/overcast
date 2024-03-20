@@ -3,8 +3,9 @@
 class CreateForecasts < ActiveRecord::Migration[7.1]
   def change
     create_table :forecasts do |t|
-      t.string :postal_code
-      t.string :data_str
+      t.string :data_str, null: false
+      t.string :place_id, null: false
+      t.string :postal_code, null: true
 
       t.timestamps
     end

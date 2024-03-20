@@ -4,8 +4,13 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+# one: {}
+# # column: value
+# #
+# two: {}
 # column: value
-#
-two: {}
-# column: value
+
+nyc:
+  data_str: "{\"coord\":{\"lon\":-74.0059,\"lat\":40.7128},\"weather\":[{\"id\":803,\"main\":\"Clouds\",\"description\":\"broken clouds\",\"icon\":\"04d\"}],\"base\":\"stations\",\"main\":{\"temp\":280.39,\"feels_like\":277.23,\"temp_min\":277.5,\"temp_max\":282.79,\"pressure\":1006,\"humidity\":54},\"visibility\":10000,\"wind\":{\"speed\":5.14,\"deg\":260},\"clouds\":{\"all\":75},\"dt\":1710941178,\"sys\":{\"type\":2,\"id\":2008101,\"country\":\"US\",\"sunrise\":1710932317,\"sunset\":1710976081},\"timezone\":-14400,\"id\":5128581,\"name\":\"New York\",\"cod\":200}"
+  postal_code: 10001
+  place_id: 371663561

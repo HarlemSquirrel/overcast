@@ -4,20 +4,27 @@ require 'test_helper'
 
 class ForecastTest < ActiveSupport::TestCase
   test '#description' do
-    forecast = Forecast.new(data_str: { weather: [{ description: 'cloudy' }] }.to_json)
-    assert_equal 'cloudy', forecast.description
+    forecast = forecasts(:nyc)
+    assert_equal 'broken clouds', forecast.description
   end
 
-  test '#emoji' do
-    forecast = Forecast.new(data_str: { weather: [{ description: 'cloudy' }] }.to_json)
-    assert_equal '☁️', forecast.emoji
+  test '#humidity' do
+    forecast = forecasts(:nyc)
+    assert_equal 54, forecast.humidity
+  end
 
-    forecast = Forecast.new(data_str: { weather: [{ description: 'light rain' }] }.to_json)
-    assert_equal '🌧️', forecast.emoji
+  test '#pressure' do
+    forecast = forecasts(:nyc)
+    assert_equal 1006, forecast.pressure
+  end
+
+  test '#temperature' do
+    forecast = forecasts(:nyc)
+    assert_equal Temperature.new(280.39), forecast.temperature
   end
 
   test '#stale?' do
     forecast = Forecast.new(updated_at: 31.minutes.ago)
-    assert 'cloudy', forecast.stale?
+    assert forecast.stale?
   end
 end

@@ -1,12 +1,12 @@
 <div class="container d-flex justify-content-center">
-  <% if @location %>
+  <% if @location&.found? %>
   <div class="card" >
     <div class="card-body text-center">
       <h5 class="card-title">
         <%= [@location.city, @location.state, @location.country_code.upcase].compact.join(', ') %>
       </h5>
 
-      <% if @forecast %>
+      <% if @forecast.present? %>
       <div class="row">
         <div class="col">
           <p class="mb-0">
@@ -38,12 +38,14 @@
         </div>
       </div>
 
-      <p class="fs-6 text-secondary">
-        <% if !@forecast.saved_changes? %>
-          <span class="badge text-bg-secondary">Cached</span>
+      <% if @forecast.updated_at.present? %>
+        <p class="fs-6 text-secondary">
+          <% if !@forecast.saved_changes? %>
+            <span class="badge text-bg-secondary">Cached</span>
+          <% end %>
+          Updated <%= time_ago_in_words(@forecast.updated_at) %> ago
+        </p>
         <% end %>
-        Updated <%= time_ago_in_words(@forecast.updated_at) %> ago
-      </p>
       <% end %>
 
     </div>

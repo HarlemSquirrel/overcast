@@ -10,6 +10,10 @@ class Temperature
     @kelvin = kelvin
   end
 
+  def ==(other_temperature)
+    other_temperature.is_a?(self.class) && other_temperature.kelvin == kelvin
+  end
+
   def celsius
     (kelvin - 273.15).round(1)
   end

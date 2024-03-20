@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 ##
-# Cache geolocation data
+# Cached geolocation data
 #
 class GeocodedLocation
   CACHE_DURATION = 1.hour
 
-  delegate :city, :country_code, :latitude, :longitude, :postal_code, :state, to: :cached_location
+  delegate :city, :country_code, :latitude, :longitude, :postal_code, :place_id, :state, to: :cached_location, allow_nil: true
 
   def initialize(query)
     @query = query.strip.downcase

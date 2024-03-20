@@ -5,6 +5,10 @@
 # and abstract the data extraction logic.
 #
 class Forecast < ApplicationRecord
+  # validates :postal_code, presence: true
+  validates :place_id, presence: true
+  validates :data_str, presence: true
+
   def data
     @data ||= JSON.parse(data_str)
   end
