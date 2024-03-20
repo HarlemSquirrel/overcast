@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 ##
 # Retrieve weather data from OpenWeather API
 #
 class OpenWeather
-  HEADERS = {'Content-type' => 'application/json; charset=UTF-8' }
+  HEADERS = { 'Content-type' => 'application/json; charset=UTF-8' }.freeze
   URI = URI('https://api.openweathermap.org').freeze
 
   class Error < StandardError; end
@@ -15,7 +17,7 @@ class OpenWeather
 
   def weather_data_str
     case response
-    when Net::HTTPSuccess then
+    when Net::HTTPSuccess
       response.body
     else
       raise Error, response

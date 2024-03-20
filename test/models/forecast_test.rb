@@ -1,21 +1,23 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class ForecastTest < ActiveSupport::TestCase
-  test "#description" do
-    forecast = Forecast.new(data_str: { weather: [{ "description": "cloudy" }]}.to_json)
-    assert_equal "cloudy", forecast.description
+  test '#description' do
+    forecast = Forecast.new(data_str: { weather: [{ description: 'cloudy' }] }.to_json)
+    assert_equal 'cloudy', forecast.description
   end
 
-  test "#emoji" do
-    forecast = Forecast.new(data_str: { weather: [{ "description": "cloudy" }]}.to_json)
-    assert_equal "☁️", forecast.emoji
+  test '#emoji' do
+    forecast = Forecast.new(data_str: { weather: [{ description: 'cloudy' }] }.to_json)
+    assert_equal '☁️', forecast.emoji
 
-    forecast = Forecast.new(data_str: { weather: [{ "description": "light rain" }]}.to_json)
-    assert_equal "🌧️", forecast.emoji
+    forecast = Forecast.new(data_str: { weather: [{ description: 'light rain' }] }.to_json)
+    assert_equal '🌧️', forecast.emoji
   end
 
-  test "#stale?" do
+  test '#stale?' do
     forecast = Forecast.new(updated_at: 31.minutes.ago)
-    assert "cloudy", forecast.stale?
+    assert 'cloudy', forecast.stale?
   end
 end

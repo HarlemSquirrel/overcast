@@ -16,5 +16,16 @@ require:
 AllCops:
   NewCops: enable
 
+Metrics/AbcSize:
+  Enabled: false
+
 Metrics/BlockLength:
   Enabled: false
+
+Metrics/MethodLength:
+  Max: 15
+
+Style/Documentation:
+  Exclude:
+    - db/**/*
+    - test/**/*
