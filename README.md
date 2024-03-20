@@ -1,24 +1,31 @@
-# README
+# Overcast
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Get weather for an address.
 
-Things you may want to cover:
+## Development
 
-* Ruby version
+### Dependecies
 
-* System dependencies
+- Ruby 3.3.0
 
-* Configuration
+### Get started
 
-* Database creation
+Install gem dependencies
 
-* Database initialization
+```sh
+bundle install
+```
 
-* How to run the test suite
+Start a local server
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+bin/rails server
+```
 
-* Deployment instructions
+### Test
 
-* ...
+Run the test suite
+
+```sh
+bin/rails test
+```
