@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://nominatim.openstreetmap.org/search?accept-language=en&addressdetails=1&format=json&q=1%20times%20square,%20new%20york,%20ny
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 20 Mar 2024 15:10:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1556'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sicGxhY2VfaWQiOjE1NDMxMjQ4LCJsaWNlbmNlIjoiRGF0YSDCqSBPcGVuU3RyZWV0TWFwIGNvbnRyaWJ1dG9ycywgT0RiTCAxLjAuIGh0dHA6Ly9vc20ub3JnL2NvcHlyaWdodCIsIm9zbV90eXBlIjoid2F5Iiwib3NtX2lkIjoyNjYxNzA4MjUsImxhdCI6IjQwLjc1NjIxMjg1IiwibG9uIjoiLTczLjk4NjUzMzg1OTUwNTIyIiwiY2xhc3MiOiJidWlsZGluZyIsInR5cGUiOiJjb21tZXJjaWFsIiwicGxhY2VfcmFuayI6MzAsImltcG9ydGFuY2UiOjAuMzY3MzkxMDYxNzUzMTcyOTMsImFkZHJlc3N0eXBlIjoiYnVpbGRpbmciLCJuYW1lIjoiT25lIFRpbWVzIFNxdWFyZSIsImRpc3BsYXlfbmFtZSI6Ik9uZSBUaW1lcyBTcXVhcmUsIDEsIFRpbWVzIFNxdWFyZSwgTWFuaGF0dGFuLCBOZXcgWW9yayBDb3VudHksIE5ldyBZb3JrLCAxMDAzNiwgVW5pdGVkIFN0YXRlcyIsImFkZHJlc3MiOnsiYnVpbGRpbmciOiJPbmUgVGltZXMgU3F1YXJlIiwiaG91c2VfbnVtYmVyIjoiMSIsInJvYWQiOiJUaW1lcyBTcXVhcmUiLCJjb21tZXJjaWFsIjoiVGltZXMgU3F1YXJlIiwic3VidXJiIjoiTWFuaGF0dGFuIiwiY291bnR5IjoiTmV3IFlvcmsgQ291bnR5IiwiY2l0eSI6Ik5ldyBZb3JrIiwic3RhdGUiOiJOZXcgWW9yayIsIklTTzMxNjYtMi1sdmw0IjoiVVMtTlkiLCJwb3N0Y29kZSI6IjEwMDM2IiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJjb3VudHJ5X2NvZGUiOiJ1cyJ9LCJib3VuZGluZ2JveCI6WyI0MC43NTYwMDUwIiwiNDAuNzU2NDE5OSIsIi03My45ODY3MTc1IiwiLTczLjk4NjM5MTUiXX0seyJwbGFjZV9pZCI6MTUzNDAyODMsImxpY2VuY2UiOiJEYXRhIMKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzLCBPRGJMIDEuMC4gaHR0cDovL29zbS5vcmcvY29weXJpZ2h0Iiwib3NtX3R5cGUiOiJub2RlIiwib3NtX2lkIjoyNzE3MjkzODI3LCJsYXQiOiI0MC43NTc5MDU4IiwibG9uIjoiLTczLjk4NTgzOTgiLCJjbGFzcyI6InBsYWNlIiwidHlwZSI6ImhvdXNlIiwicGxhY2VfcmFuayI6MzAsImltcG9ydGFuY2UiOjkuOTk5OTk5OTk5OTU0NDllLTA2LCJhZGRyZXNzdHlwZSI6InBsYWNlIiwibmFtZSI6IiIsImRpc3BsYXlfbmFtZSI6IjEsIFRpbWVzIFNxdWFyZSwgTWFuaGF0dGFuIENvbW11bml0eSBCb2FyZCA1LCBNYW5oYXR0YW4sIE5ldyBZb3JrIENvdW50eSwgTmV3IFlvcmssIDEwMDM2LCBVbml0ZWQgU3RhdGVzIiwiYWRkcmVzcyI6eyJob3VzZV9udW1iZXIiOiIxIiwicm9hZCI6IlRpbWVzIFNxdWFyZSIsIm5laWdoYm91cmhvb2QiOiJNYW5oYXR0YW4gQ29tbXVuaXR5IEJvYXJkIDUiLCJzdWJ1cmIiOiJNYW5oYXR0YW4iLCJjb3VudHkiOiJOZXcgWW9yayBDb3VudHkiLCJjaXR5IjoiTmV3IFlvcmsiLCJzdGF0ZSI6Ik5ldyBZb3JrIiwiSVNPMzE2Ni0yLWx2bDQiOiJVUy1OWSIsInBvc3Rjb2RlIjoiMTAwMzYiLCJjb3VudHJ5IjoiVW5pdGVkIFN0YXRlcyIsImNvdW50cnlfY29kZSI6InVzIn0sImJvdW5kaW5nYm94IjpbIjQwLjc1Nzg1NTgiLCI0MC43NTc5NTU4IiwiLTczLjk4NTg4OTgiLCItNzMuOTg1Nzg5OCJdfV0=
+  recorded_at: Wed, 20 Mar 2024 15:10:56 GMT
+recorded_with: VCR 6.2.0
