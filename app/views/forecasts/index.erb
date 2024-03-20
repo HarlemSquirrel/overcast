@@ -1,0 +1,28 @@
+<div class="container d-flex justify-content-center">
+  <% if @location %>
+  <div class="card" style="width: 18rem;">
+    <%# <img src="..." class="card-img-top" alt="..."> %>
+    <div class="card-body text-center">
+      <h5 class="card-title">
+        <%= [@location.city, @location.state, @location.country_code.upcase].compact.join(', ') %>
+      </h5>
+
+      <% if @forecast %>
+      <p>
+        <%= @forecast.description.titleize %>
+      </p>
+
+
+      <h4>
+        <%= @forecast.temperature.fahrenheit %>℉
+      </h4>
+
+      <h2>
+          <%= @forecast.emoji %>
+      </h2>
+      <% end %>
+
+    </div>
+  </div>
+  <% end %>
+</div>
