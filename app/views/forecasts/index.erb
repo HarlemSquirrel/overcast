@@ -1,25 +1,49 @@
 <div class="container d-flex justify-content-center">
   <% if @location %>
-  <div class="card" style="width: 18rem;">
-    <%# <img src="..." class="card-img-top" alt="..."> %>
+  <div class="card" >
     <div class="card-body text-center">
       <h5 class="card-title">
         <%= [@location.city, @location.state, @location.country_code.upcase].compact.join(', ') %>
       </h5>
 
       <% if @forecast %>
-      <p>
-        <%= @forecast.description.titleize %>
+      <div class="row">
+        <div class="col">
+          <p class="mb-0">
+            <%= image_tag icon_url(@forecast) %>
+          </p>
+
+          <p>
+            <%= @forecast.description.titleize %>
+          </p>
+
+        </div>
+
+        <div class="col pt-2 text-start">
+          <h4>
+            <%= @forecast.temperature.fahrenheit %>℉
+          </h4>
+
+          <p>
+            H: <%= @forecast.temperature_max.fahrenheit %>℉
+            L: <%= @forecast.temperature_min.fahrenheit %>℉
+          </p>
+
+          <p class="mb-0">
+            Humidity: <%= @forecast.humidity %>%
+          </p>
+          <p>
+            Pressure: <%= @forecast.pressure %>hPa
+          </p>
+        </div>
+      </div>
+
+      <p class="fs-6 text-secondary">
+        <% if !@forecast.saved_changes? %>
+          <span class="badge text-bg-secondary">Cached</span>
+        <% end %>
+        Updated <%= time_ago_in_words(@forecast.updated_at) %> ago
       </p>
-
-
-      <h4>
-        <%= @forecast.temperature.fahrenheit %>℉
-      </h4>
-
-      <h2>
-          <%= @forecast.emoji %>
-      </h2>
       <% end %>
 
     </div>
